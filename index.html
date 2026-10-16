@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>Erin Chan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Erin Chan, product design leader for high-stakes enterprise platforms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&display=swap">
+<style>
+/* Layout: the resume's grid carried to the web — a narrow label rail (where the mark and section heads live) beside a wide content field. */
+:root {
+  --bg: #ffffff;
+  --surface: #f7f5fa;
+  --ink: #2b2836;
+  --text: #5e5c66;
+  --meta: #8d8b95;
+  --rule: #e7e3ee;
+  --accent: #54378f;
+  --lilac: #cdbde6;
+  --grad-a: #663694;
+  --grad-b: #ca3b95;
+  --disc: #2b2836;
+  --font: "Mona Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.1875rem;
+  --step-2: 1.5rem;
+  --step-hero: clamp(2rem, 1.2rem + 3.6vw, 3.6rem);
+  --rail: 13rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141119; --surface: #1c1824; --ink: #f1eef7; --text: #b7b3c2; --meta: #8a8696;
+    --rule: #2c2735; --accent: #b9a1ec; --lilac: #4b3d66; --grad-a: #9a6fe0; --grad-b: #e05aa8; --disc: #2e2839;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141119; --surface: #1c1824; --ink: #f1eef7; --text: #b7b3c2; --meta: #8a8696;
+  --rule: #2c2735; --accent: #b9a1ec; --lilac: #4b3d66; --grad-a: #9a6fe0; --grad-b: #e05aa8; --disc: #2e2839;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: var(--font); font-size: var(--step-0); line-height: 1.6; font-weight: 350;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--grad-b); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: 72rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) {
+  .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); }
+}
+
+/* Two-column section grid: label rail + content */
+.row { display: grid; gap: 1rem 2.5rem; grid-template-columns: 1fr; }
+
+
+.label {
+  margin: 0; color: var(--accent); font-weight: 450; font-size: var(--step-1);
+  letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.3;
+}
+
+/* Header */
+.top { padding-block: 1.25rem; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: var(--bg); }
+.top-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: 0.875rem; text-decoration: none; }
+.mark { width: 2.25rem; height: auto; flex: none; }
+.who { line-height: 1.35; }
+.who strong { display: block; color: var(--accent); font-weight: 450; font-size: var(--step-1); }
+.who span { font-size: var(--step--1); color: var(--meta); }
+
+/* Hero */
+.hero { padding-block: 3.5rem clamp(6rem, 4rem + 8vw, 11rem); }
+h1 {
+  margin: 0; color: var(--ink); font-size: var(--step-hero); line-height: 1.08;
+  font-weight: 560; letter-spacing: -0.025em; text-wrap: balance; max-width: 18ch;
+}
+.grad {
+  background: linear-gradient(100deg, var(--grad-a), var(--grad-b));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.lede { margin: 1.75rem 0 0; max-width: 40rem; font-size: var(--step-1); line-height: 1.55; }
+.lede strong { color: var(--ink); font-weight: 500; }
+
+.facts {
+  list-style: none; margin: 2.75rem 0 0; padding: 1.5rem 0 0; border-top: 1px solid var(--rule);
+  display: grid; gap: 1.25rem 2rem; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+.facts b {
+  display: block; color: var(--ink); font-weight: 600; font-size: var(--step-2);
+  letter-spacing: -0.01em; font-variant-numeric: tabular-nums; line-height: 1.2;
+}
+.facts span { display: block; font-size: var(--step--1); color: var(--meta); margin-top: 0.25rem; max-width: 22ch; }
+
+/* Sections */
+section { padding-block: 3.5rem; }
+#intro, #work, #experience, #contact { scroll-margin-top: 5rem; }
+@media (min-width: 1020px) { #intro, #work, #experience, #contact { scroll-margin-top: 1.5rem; } }
+
+/* Experience: after billysweeney.com — a monogram disc, small company name,
+   an oversized role title, then time and place and one muted line. */
+.experience { padding-block: 5rem 4rem; }
+.bg-intro { margin: 0; max-width: 34rem; color: var(--ink); font-size: var(--step-1); line-height: 1.5; font-weight: 400; }
+.jobs { display: grid; gap: clamp(4.5rem, 3rem + 5vw, 8rem); margin-top: clamp(5rem, 3rem + 6vw, 9rem); }
+.job { display: grid; justify-items: start; min-width: 0; }
+.disc {
+  width: 4.5rem; height: 4.5rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--disc); color: #ffffff; margin-bottom: 1.5rem;
+  font-weight: 600; font-size: 1.05rem; letter-spacing: 0.02em;
+}
+.disc svg { width: 2rem; height: 2rem; }
+.job .company { margin: 0; color: var(--ink); font-size: var(--step-2); font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; }
+.job .role {
+  margin: 0.35rem 0 0; color: var(--ink); font-weight: 520; letter-spacing: -0.03em; line-height: 1.02;
+  font-size: clamp(2.25rem, 1.2rem + 4.2vw, 4.25rem); text-wrap: balance; max-width: 16ch;
+}
+.job .meta { margin: 1.25rem 0 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; color: var(--ink); font-size: var(--step-0); font-weight: 500; font-variant-numeric: tabular-nums; }
+.job .desc { margin: 0.6rem 0 0; color: var(--meta); max-width: 36rem; }
+
+/* Contact */
+.contact .ask {
+  margin: 0; color: var(--ink); font-size: var(--step-2); font-weight: 560; letter-spacing: -0.015em;
+  text-wrap: balance; max-width: 26ch; line-height: 1.25;
+}
+.contact .ask + p { margin: 1rem 0 0; max-width: 38rem; }
+.social { list-style: none; margin: 2rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.social a {
+  width: 3.25rem; height: 3.25rem; border-radius: 50%; display: grid; place-items: center;
+  color: var(--ink); background: var(--surface); border: 1px solid var(--rule);
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.social a:hover { color: var(--accent); border-color: var(--lilac); transform: translateY(-2px); }
+.social svg { width: 1.5rem; height: 1.5rem; }
+@media (prefers-reduced-motion: reduce) { .social a { transition: none; } .social a:hover { transform: none; } }
+
+footer { padding-block: 2.5rem 3rem; border-top: 1px solid var(--rule); font-size: var(--step--1); color: var(--meta); }
+footer .row { align-items: center; }
+footer a { text-decoration: none; }
+
+/* Work collage: full-bleed, gutterless masonry with staggered column tops (after billysweeney.com).
+   Each tile takes a real screenshot via `src`; until then it shows a sketch of the product in brand tones. */
+.collage { padding: 0 0 1rem; overflow: hidden; }
+.collage-grid { display: grid; grid-template-columns: repeat(var(--cols, 6), minmax(0, 1fr)); align-items: start; }
+.collage-col { display: flex; flex-direction: column; min-width: 0; }
+.tile {
+  position: relative; margin: 0; overflow: hidden; container-type: inline-size;
+  background: var(--t-bg); color: var(--t-fg);
+}
+.tile img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tile figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 0.9rem 0.75rem 0.6rem;
+  font-size: 0.75rem; line-height: 1.3; color: #fff; font-weight: 500;
+  background: linear-gradient(to top, rgba(20,17,25,0.78), rgba(20,17,25,0));
+  opacity: 0; transition: opacity 0.2s ease;
+}
+.tile:hover figcaption, .tile:focus-within figcaption, .tile:focus figcaption { opacity: 1; }
+.tile:focus { outline-offset: -3px; }
+@media (hover: none) { .tile figcaption { opacity: 1; } }
+
+/* Tile tones: each is a self-contained surface with its own ink, like a screenshot */
+.t-paper  { --t-bg: #f4f2f7; --t-fg: #2b2836; --t-mute: #dcd5e6; --t-acc: #54378f; --t-acc2: #ca3b95; }
+.t-white  { --t-bg: #ffffff; --t-fg: #2b2836; --t-mute: #e6e2ec; --t-acc: #663694; --t-acc2: #ca3b95; }
+.t-lilac  { --t-bg: #e4dcf1; --t-fg: #2e2441; --t-mute: #c9bce0; --t-acc: #54378f; --t-acc2: #ca3b95; }
+.t-ink    { --t-bg: #1c1824; --t-fg: #f1eef7; --t-mute: #373043; --t-acc: #b9a1ec; --t-acc2: #e05aa8; }
+.t-plum   { --t-bg: #54378f; --t-fg: #ffffff; --t-mute: rgba(255,255,255,0.22); --t-acc: #f0c9e4; --t-acc2: #ffffff; }
+.t-stone  { --t-bg: #d9d6dd; --t-fg: #26232d; --t-mute: #c2bec9; --t-acc: #2b2836; --t-acc2: #54378f; }
+:root[data-theme="dark"] .tile:not(.has-img) { filter: brightness(0.92); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tile:not(.has-img) { filter: brightness(0.92); } }
+
+/* Sketch primitives, sized to the tile with container units */
+.sk { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 9cqw; }
+.sk i { display: block; background: var(--t-mute); border-radius: 1.2cqw; }
+.sk .acc { background: var(--t-acc); }
+.sk .acc2 { background: var(--t-acc2); }
+.phone { width: 52cqw; aspect-ratio: 9 / 18; border: 1.6cqw solid var(--t-fg); border-radius: 7cqw; padding: 6cqw 4.5cqw; display: flex; flex-direction: column; gap: 3cqw; background: var(--t-bg); }
+.phone i { height: 3cqw; }
+.phone .card { height: 13cqw; border-radius: 2.5cqw; }
+.browser { width: 100%; border-radius: 2cqw; background: var(--t-bg); box-shadow: 0 0 0 0.6cqw var(--t-mute); overflow: hidden; }
+.browser .bar { height: 6cqw; background: var(--t-mute); border-radius: 0; }
+.browser .body { padding: 5cqw; display: grid; gap: 3cqw; }
+.browser .hero { height: 22cqw; border-radius: 2cqw; }
+.browser .row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3cqw; }
+.browser .row3 i { height: 14cqw; }
+.dash { width: 100%; display: grid; grid-template-columns: 18% 1fr; gap: 3cqw; }
+.dash .side { height: 62cqw; }
+.dash .main { display: grid; gap: 3cqw; align-content: start; }
+.dash .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5cqw; }
+.dash .kpis i { height: 10cqw; }
+.dash .bars { height: 30cqw; display: flex; align-items: flex-end; gap: 2cqw; }
+.dash .bars i { flex: 1; border-radius: 1cqw 1cqw 0 0; }
+.dash .lines i { height: 2.5cqw; margin-top: 2cqw; }
+.donut { width: 62cqw; height: auto; }
+.swatches { width: 100%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3cqw; }
+.swatches i { aspect-ratio: 1; border-radius: 2cqw; }
+.table { width: 100%; display: grid; gap: 2.2cqw; }
+.table .r { display: grid; grid-template-columns: 8cqw 1fr 18cqw 12cqw; gap: 2.5cqw; align-items: center; }
+.table .r i { height: 3cqw; }
+.table .r .dot { width: 4cqw; height: 4cqw; border-radius: 50%; }
+.table .head i { height: 4cqw; background: var(--t-fg); opacity: 0.8; }
+.chat { width: 100%; display: grid; gap: 3.5cqw; }
+.chat .b { height: 11cqw; width: 70%; border-radius: 5cqw; }
+.chat .me { justify-self: end; width: 55%; }
+.flow { width: 100%; display: flex; align-items: center; gap: 0; }
+.flow .n { flex: none; width: 20cqw; aspect-ratio: 1; border-radius: 4cqw; }
+.flow .l { flex: 1; height: 0.8cqw; border-radius: 0; }
+.word { font-size: 17cqw; font-weight: 640; letter-spacing: -0.03em; line-height: 0.95; color: var(--t-fg); text-align: left; width: 100%; }
+.word small { display: block; font-size: 6cqw; font-weight: 450; letter-spacing: 0; margin-top: 4cqw; opacity: 0.7; }
+.markart { width: 46cqw; height: auto; }
+
+/* ---- Navigation ----
+   Desktop (>= 1020px): a vertical section list fixed in the left rail, floating over the page.
+   Muted items, the current section in full ink. Below 1020px: a menu button opens a full-screen list. */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 50; background: var(--bg); }
+.side-nav { display: none; }
+.side-nav a, .mobile-nav a { text-decoration: none; color: var(--meta); transition: color 0.15s ease; }
+.side-nav a:hover, .mobile-nav a:hover, .side-nav a[aria-current="true"], .mobile-nav a[aria-current="true"] { color: var(--ink); }
+
+.menu-btn {
+  position: relative; width: 2.75rem; height: 2.75rem; margin-right: -0.5rem; border: 0; border-radius: 50%;
+  background: transparent; color: var(--ink); cursor: pointer; display: grid; place-items: center;
+}
+.menu-btn:hover { background: var(--surface); }
+.menu-btn .line { position: absolute; width: 1.4rem; height: 2px; border-radius: 2px; background: currentColor; transition: transform 0.2s ease; }
+.menu-btn .line:nth-child(1) { transform: translateY(-4px); }
+.menu-btn .line:nth-child(2) { transform: translateY(4px); }
+.menu-btn[aria-expanded="true"] .line:nth-child(1) { transform: rotate(45deg); }
+.menu-btn[aria-expanded="true"] .line:nth-child(2) { transform: rotate(-45deg); }
+
+.mobile-nav {
+  position: fixed; inset: 0; z-index: 30; background: var(--bg);
+  display: flex; flex-direction: column; justify-content: center; gap: 0.25rem;
+  padding-block: calc(5.5rem + env(safe-area-inset-top, 0px)) calc(2rem + env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) { .mobile-nav { padding-left: max(40px, env(safe-area-inset-left, 0px)); } }
+.mobile-nav a { font-size: clamp(2.25rem, 1.5rem + 5vw, 3.5rem); font-weight: 520; letter-spacing: -0.03em; line-height: 1.15; }
+body.menu-open { overflow: hidden; }
+
+@media (min-width: 1020px) {
+  .menu-btn, .mobile-nav { display: none !important; }
+  .top { position: static; }
+  .side-nav {
+    display: flex; flex-direction: column; gap: 0.15rem;
+    position: fixed; z-index: 30; top: 9.5rem;
+    left: max(40px, env(safe-area-inset-left, 0px));
+    padding: 0.7rem 0.9rem; margin-left: -0.9rem; border-radius: 12px;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    font-size: var(--step-0); line-height: 1.3;
+  }
+  /* The floating menu replaces the rail's section labels on desktop */
+  .row > .label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  /* Full-width 12-column grid like billysweeney.com: 40px margins, 20px gutters,
+     the menu in columns 1-2 and every section's content starting at column 3. */
+  .wrap { max-width: none; }
+  .row { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 20px; }
+  .row > :last-child { grid-column: 3 / -1; min-width: 0; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media (prefers-reduced-motion: reduce) { .menu-btn .line, .side-nav a, .mobile-nav a { transition: none; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .mark path { transition: transform 0.4s ease; transform-origin: center; }
+  .brand:hover .mark path { transform: translateY(-1px); }
+}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="markGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" style="stop-color: var(--grad-a)"/>
+      <stop offset="1" style="stop-color: var(--grad-b)"/>
+    </linearGradient>
+    <path id="markPath" d="M 26.18 0.45 L 0.59 26.04 C 0 26.63 0 27.59 0.59 28.18 L 12.40 40 L 1.66 50.73 C 1.07 51.32 1.07 52.29 1.66 52.88 L 27.79 79.01 C 28.09 79.30 28.48 79.45 28.87 79.45 C 29.25 79.45 29.64 79.30 29.94 79.01 L 56.61 52.34 C 57.20 51.75 57.20 50.79 56.61 50.20 C 56.01 49.60 55.05 49.60 54.46 50.20 L 28.87 75.79 L 4.89 51.80 L 14.55 42.14 L 27.08 54.67 C 27.38 54.96 27.76 55.11 28.15 55.11 C 28.54 55.11 28.93 54.96 29.23 54.67 L 54.81 29.08 C 55.41 28.48 55.41 27.52 54.81 26.93 C 54.22 26.34 53.26 26.34 52.67 26.93 L 28.15 51.45 L 16.70 40 L 41.21 15.48 C 41.81 14.88 41.81 13.92 41.21 13.33 C 40.62 12.74 39.66 12.74 39.07 13.33 L 14.55 37.85 L 3.81 27.11 L 28.33 2.59 C 28.92 2 28.92 1.04 28.33 0.45 C 28.04 0.15 27.64 0 27.26 0 C 26.87 0 26.48 0.15 26.18 0.45 Z"/>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap top-bar">
+    <a class="brand" href="#intro" data-nav="intro">
+      <svg class="mark" viewBox="0 0 57.2 79.45" role="img" aria-label="Erin Chan logo"><use href="#markPath" fill="url(#markGrad)"/></svg>
+      <span class="who"><strong>Erin Chan</strong><span>Product Design Leader</span></span>
+    </a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span class="line"></span><span class="line"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Floating section menu (desktop), after billysweeney.com -->
+<nav class="side-nav" id="side-nav" aria-label="Sections">
+  <a href="#intro" data-nav="intro">Intro</a>
+  <a href="#work" data-nav="work">Work</a>
+  <a href="#experience" data-nav="experience">Experience</a>
+  <a href="#contact" data-nav="contact">Contact</a>
+</nav>
+
+<!-- Full-screen menu (phones and tablets) -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Sections" hidden>
+  <a href="#intro" data-nav="intro">Intro</a>
+  <a href="#work" data-nav="work">Work</a>
+  <a href="#experience" data-nav="experience">Experience</a>
+  <a href="#contact" data-nav="contact">Contact</a>
+</nav>
+
+<main>
+  <div class="wrap hero" id="intro">
+    <div class="row">
+      <div aria-hidden="true"></div>
+      <div>
+        <h1>I design products that make <span class="grad">complex things feel simple</span>.</h1>
+        <p class="lede">For over a decade I've designed consumer and enterprise products, from Domino's digital ordering to connected mobility platforms at Panasonic. Today I'm <strong>Senior Manager, Product Design at Western Union</strong>, building design systems and AI-enabled workflows that help teams ship faster.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="collage" id="work" aria-label="Selected work">
+    <div class="collage-grid" id="collage"></div>
+  </div>
+
+  <section id="experience" class="experience">
+    <div class="wrap row">
+      <h2 class="label">Experience</h2>
+      <div>
+        <p class="bg-intro">I studied graphic design at SCAD, started out designing sites and apps for brands at agencies, then moved into product design. Since then I've worked across consumer and enterprise products, from Domino's ordering to connected mobility at Panasonic and financial platforms at Western Union.</p>
+        <div class="jobs">
+        <article class="job">
+          <div class="disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h14"/><path d="M15 5.5L18.5 9L15 12.5"/><path d="M20 15H6"/><path d="M9 11.5L5.5 15L9 18.5"/></svg></div>
+          <h3 class="company">Western Union</h3>
+          <p class="role">Senior Manager, Product Design</p>
+          <p class="meta"><span>Now</span><span>Denver</span></p>
+          <p class="desc">Building the design system and an AI-assisted path from design to code for data-dense enterprise platforms.</p>
+        </article>
+        <article class="job">
+          <div class="disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="18" r="2"/><circle cx="18.5" cy="6" r="2"/><path d="M7.5 18H12a3.5 3.5 0 0 0 0-7H12a3.5 3.5 0 0 1 0-7h4.5"/></svg></div>
+          <h3 class="company">Panasonic Smart Mobility</h3>
+          <p class="role">Manager, Product Design</p>
+          <p class="meta"><span>2019–2026</span><span>Denver</span></p>
+          <p class="desc">Designed Cirrus, a CES Innovation Award honoree, plus EV fleet charging and content management platforms.</p>
+        </article>
+        <article class="job">
+          <div class="disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21L4.2 7.2c4.9-2.9 10.7-2.9 15.6 0L12 21z"/><path d="M5.8 10c3.9-2 8.5-2 12.4 0"/><circle cx="10" cy="12.6" r="1"/><circle cx="14.2" cy="13.4" r="1"/><circle cx="12" cy="16.6" r="1"/></svg></div>
+          <h3 class="company">CP+B</h3>
+          <p class="role">Product Designer, Domino's</p>
+          <p class="meta"><span>2016–2019</span><span>Boulder</span></p>
+          <p class="desc">Led Domino's web and app redesigns, which added $25.5M in revenue, and designed the D.A.V.E. delivery experience.</p>
+        </article>
+        <article class="job">
+          <div class="disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M10 9v11"/><path d="M13 13h5"/><path d="M13 16h3"/></svg></div>
+          <h3 class="company">Sagepath</h3>
+          <p class="role">UX Designer</p>
+          <p class="meta"><span>2015–2016</span><span>Atlanta</span></p>
+          <p class="desc">Designed sites and apps for Fossil, Skagen, Shaw Floors, Howard Hughes, and Condé Nast.</p>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap row">
+      <h2 class="label">Contact</h2>
+      <div>
+        <p class="ask">Case studies are shared privately. Write to me for access.</p>
+        <p>I'm glad to walk through the work, talk through design systems and complex data UX, or compare notes on AI in the design process.</p>
+        <!-- Icons: Iconoir (MIT) -->
+        <ul class="social" aria-label="Find me online">
+          <li><a href="mailto:hello@erinchan.design" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9L12 12.5L17 9"/><path d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/echan4/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z"/><path d="M7 17V13.5V10"/><path d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17"/><path d="M7 7.01L7.01 6.99889"/></svg></a></li>
+          <li><a href="https://www.instagram.com/fontsnob/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"/><path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z"/><path d="M17.5 6.51L17.51 6.49889"/></svg></a></li>
+          <li><a href="https://pin.it/kdehcSMhx" target="_blank" rel="noopener" aria-label="Pinterest" title="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 14.5C5 10 9.46243 6.5 12.5 6.5C15.5376 6.5 18 8.15367 18 12C18 15.0376 16 17 14 17C12 17 11 15 11.5 12"/><path d="M12 10L9 21.5"/><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/></svg></a></li>
+          <li><a href="https://github.com/fontsnob7" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 22.0268V19.1568C16.0375 18.68 15.9731 18.2006 15.811 17.7506C15.6489 17.3006 15.3929 16.8902 15.06 16.5468C18.2 16.1968 21.5 15.0068 21.5 9.54679C21.4997 8.15062 20.9627 6.80799 20 5.79679C20.4558 4.5753 20.4236 3.22514 19.91 2.02679C19.91 2.02679 18.73 1.67679 16 3.50679C13.708 2.88561 11.292 2.88561 8.99999 3.50679C6.26999 1.67679 5.08999 2.02679 5.08999 2.02679C4.57636 3.22514 4.54413 4.5753 4.99999 5.79679C4.03011 6.81549 3.49251 8.17026 3.49999 9.57679C3.49999 14.9968 6.79998 16.1868 9.93998 16.5768C9.61098 16.9168 9.35725 17.3222 9.19529 17.7667C9.03334 18.2112 8.96679 18.6849 8.99999 19.1568V22.0268"/><path d="M9 20.0267C6 20.9999 3.5 20.0267 2 17.0267"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>erinchan.design</span>
+    <span>© 2026 Erin Chan · Denver, Colorado</span>
+  </div>
+</footer>
+
+<script>
+/* ---- Work collage ----
+   Screenshots live in work/ and are published with the page. Remove `src` to fall back to a sketch tile.
+   `ratio` is width / height of that image's crop. Order = reading order; tiles fill columns left to right. */
+var WORK = [
+  { project: "Cirrus by Panasonic", note: "Traffic operations center", src: "work/cirrus-control-room.jpg", ratio: "5 / 4", tone: "t-ink" },
+  { project: "Domino's", note: "Mobile app home, redesigned", src: "work/dominos-app-after.jpg", ratio: "2 / 3", tone: "t-paper" },
+  { project: "Howard Hughes", note: "Downtown Summerlin site hero", src: "work/hh-night.jpg", ratio: "4 / 3", tone: "t-ink" },
+  { project: "Domino's", note: "Digital ordering for the #1 pizza chain", src: "work/dominos-store.jpg", ratio: "4 / 5", tone: "t-paper" },
+  { project: "Cirrus by Panasonic", note: "Corridor monitoring map", src: "work/cirrus-corridor-map.jpg", ratio: "1 / 1", tone: "t-ink" },
+  { project: "Domino's", note: "D.A.V.E. autonomous delivery", src: "work/dominos-dave-car.jpg", ratio: "1 / 1", tone: "t-paper" },
+  { project: "Shaw Floors", note: "Dealer portal dashboard", src: "work/shaw-dashboard.jpg", ratio: "4 / 5", tone: "t-ink" },
+  { project: "Skagen", note: "Watch collection pages", src: "work/skagen-watch-styles.jpg", ratio: "3 / 4", tone: "t-white" },
+  { project: "Cirrus by Panasonic", note: "Design system screens", src: "work/cirrus-design-system.jpg", ratio: "5 / 4", tone: "t-ink" },
+  { project: "Sagepath", note: "Brand signage", src: "work/sagepath-signage.jpg", ratio: "1 / 1", tone: "t-white" },
+  { project: "Fossil", note: "Product storytelling page", src: "work/fossil-bags.jpg", ratio: "4 / 5", tone: "t-white" },
+  { project: "Domino's", note: "Visual menu, mobile web", src: "work/dominos-mobile-web.jpg", ratio: "2 / 3", tone: "t-white" },
+  { project: "Cirrus by Panasonic", note: "Network operations center", src: "work/cirrus-noc.jpg", ratio: "4 / 3", tone: "t-ink" },
+  { project: "Domino's", note: "D.A.V.E. visual identity", src: "work/dominos-dave-identity.jpg", ratio: "1 / 1", tone: "t-plum" },
+  { project: "Cirrus by Panasonic", note: "Device map and detail panel", src: "work/cirrus-device-map.jpg", ratio: "4 / 3", tone: "t-ink" },
+  { project: "Panasonic eFleet", note: "Fleet charging dashboard", src: "work/efleet-dashboard.jpg", ratio: "5 / 4", tone: "t-white" },
+  { project: "Sagepath", note: "Brand identity", src: "work/sagepath-stationery.jpg", ratio: "4 / 3", tone: "t-stone" },
+  { project: "Fossil", note: "China micro-site hero", src: "work/fossil-hero.jpg", ratio: "1 / 1", tone: "t-paper" },
+  { project: "Panasonic eFleet", note: "Charge optimization schedule", src: "work/efleet-schedule.jpg", ratio: "5 / 4", tone: "t-white" },
+  { project: "Skagen", note: "Brand micro-site", src: "work/skagen-simply-design.jpg", ratio: "1 / 1", tone: "t-white" },
+  { project: "Howard Hughes", note: "Downtown Summerlin homepage", src: "work/hh-summerlin.jpg", ratio: "3 / 4", tone: "t-white" },
+  { project: "Pulse", note: "Product illustration", src: "work/pulse-illustration.jpg", ratio: "4 / 3", tone: "t-lilac" },
+  { project: "Cirrus by Panasonic", note: "Map clustering exploration", src: "work/cirrus-map-clustering.jpg", ratio: "4 / 3", tone: "t-white" },
+  { project: "Shaw Floors", note: "Dealer portal home", src: "work/shaw-portal.jpg", ratio: "4 / 3", tone: "t-ink" }
+];
+
+(function () {
+  var SK = {
+    phone: function () { return '<div class="phone"><i class="acc" style="width:55%"></i><i style="width:80%"></i><i class="card"></i><i class="card"></i><i style="width:65%"></i><i class="card"></i></div>'; },
+    browser: function () { return '<div class="browser"><i class="bar"></i><div class="body"><i class="hero acc"></i><i style="height:3cqw;width:70%"></i><div class="row3"><i></i><i class="acc2"></i><i></i></div></div></div>'; },
+    dash: function () {
+      var h = [45, 70, 55, 85, 60, 95, 75];
+      return '<div class="dash"><i class="side"></i><div class="main"><div class="kpis"><i></i><i></i><i class="acc"></i></div><div class="bars">' +
+        h.map(function (v, i) { return '<i class="' + (i === 5 ? 'acc2' : 'acc') + '" style="height:' + v + '%;opacity:' + (i === 5 ? 1 : 0.55) + '"></i>'; }).join('') +
+        '</div><div class="lines"><i style="width:90%"></i><i style="width:60%"></i></div></div></div>';
+    },
+    donut: function () {
+      return '<svg class="donut" viewBox="0 0 100 100" aria-hidden="true"><g transform="rotate(-90 50 50)" fill="none" stroke-width="16">' +
+        '<circle cx="50" cy="50" r="34" stroke="var(--t-mute)"/>' +
+        '<circle cx="50" cy="50" r="34" stroke="var(--t-acc)" stroke-dasharray="96 214"/>' +
+        '<circle cx="50" cy="50" r="34" stroke="var(--t-acc2)" stroke-dasharray="44 214" stroke-dashoffset="-100"/></g>' +
+        '<text x="50" y="57" text-anchor="middle" font-size="20" font-weight="600" fill="var(--t-fg)" font-family="Mona Sans, system-ui, sans-serif">13</text></svg>';
+    },
+    swatches: function () {
+      var c = ['acc', '', 'acc2', '', '', 'acc', '', 'acc2', 'acc2', '', 'acc', ''];
+      return '<div class="swatches">' + c.map(function (k, i) { return '<i class="' + k + '" style="opacity:' + (k ? (i % 3 ? 0.6 : 1) : 1) + '"></i>'; }).join('') + '</div>';
+    },
+    table: function () {
+      var rows = '<div class="r head"><i></i><i style="width:60%"></i><i></i><i></i></div>';
+      for (var i = 0; i < 7; i++) rows += '<div class="r"><i class="dot ' + (i % 3 === 0 ? 'acc2' : 'acc') + '"></i><i style="width:' + (55 + (i * 17) % 40) + '%"></i><i></i><i style="width:70%"></i></div>';
+      return '<div class="table">' + rows + '</div>';
+    },
+    chat: function () { return '<div class="chat"><i class="b"></i><i class="b me acc2"></i><i class="b" style="width:80%"></i><i class="b me acc"></i></div>'; },
+    flow: function () { return '<div class="flow"><i class="n"></i><i class="l acc"></i><i class="n acc"></i><i class="l acc"></i><i class="n acc2"></i></div>'; },
+    word: function (t) { return '<div class="word">' + t.word + '<small>' + t.sub + '</small></div>'; },
+    mark: function () { return '<svg class="markart" viewBox="0 0 57.2 79.45" aria-hidden="true"><use href="#markPath" fill="url(#markGrad)"/></svg>'; }
+  };
+
+  function tileHTML(t) {
+    var label = t.project + ' · ' + t.note;
+    var inner = t.src
+      ? '<img src="' + t.src + '" alt="' + label + '" loading="lazy">'
+      : '<div class="sk" aria-hidden="true">' + SK[t.sketch](t) + '</div>';
+    return '<figure class="tile ' + t.tone + (t.src ? ' has-img' : '') + '" style="aspect-ratio:' + t.ratio + '" tabindex="0" role="img" aria-label="' + label + '">' +
+      inner + '<figcaption>' + t.project + '<br><span style="opacity:.8;font-weight:400">' + t.note + '</span></figcaption></figure>';
+  }
+
+  // Staggered column tops, as a fraction of column width: the ragged top edge of the collage.
+  var STAGGER = [0.38, 0, 0.62, 0.18, 0.04, 0.48];
+  var grid = document.getElementById('collage');
+  var current = 0;
+
+  function colsFor(w) { return w >= 1000 ? 6 : w >= 640 ? 4 : 3; }
+
+  function render() {
+    var n = colsFor(window.innerWidth);
+    if (n === current) return;
+    current = n;
+    grid.style.setProperty('--cols', n);
+    var limit = n === 3 ? 15 : n === 4 ? 20 : WORK.length;
+    var cols = [];
+    for (var c = 0; c < n; c++) cols.push([]);
+    WORK.slice(0, limit).forEach(function (t, i) { cols[i % n].push(tileHTML(t)); });
+    grid.innerHTML = cols.map(function (items, c) {
+      return '<div class="collage-col" style="padding-top:calc(' + STAGGER[c % STAGGER.length] + ' * 100%)">' + items.join('') + '</div>';
+    }).join('');
+  }
+  render();
+  window.addEventListener('resize', render);
+})();
+
+
+
+/* ---- Navigation: scroll spy, smooth jumps, mobile menu ---- */
+(function () {
+  var ids = ['intro', 'work', 'experience', 'contact'];
+  var links = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+  var btn = document.getElementById('menu-btn');
+  var mobile = document.getElementById('mobile-nav');
+
+  function setActive(id) {
+    links.forEach(function (a) {
+      if (a.classList.contains('brand')) return;
+      if (a.getAttribute('data-nav') === id) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  function openMenu(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mobile.hidden = !open;
+    document.body.classList.toggle('menu-open', open);
+    if (open) { var first = mobile.querySelector('a'); if (first) first.focus(); }
+  }
+  btn.addEventListener('click', function () { openMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !mobile.hidden) { openMenu(false); btn.focus(); }
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth >= 1020 && !mobile.hidden) openMenu(false); });
+
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var target = document.getElementById(a.getAttribute('data-nav'));
+      if (!target) return;
+      e.preventDefault();
+      openMenu(false);
+      target.scrollIntoView({ block: 'start' });
+      setActive(a.getAttribute('data-nav'));
+    });
+  });
+
+  // The section that crosses the upper-middle of the viewport is the current one.
+  function spy() {
+    var line = window.innerHeight * 0.4, current = ids[0];
+    ids.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= line) current = id;
+    });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = ids[ids.length - 1];
+    setActive(current);
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(function () { spy(); ticking = false; }); }
+  }, { passive: true });
+  window.addEventListener('resize', spy);
+  spy();
+})();
+</script>
+
+</body>
+</html>
